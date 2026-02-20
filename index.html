@@ -1,22 +1,147 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Dzaeon Links</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dzaeon | All Links</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:system-ui,Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:radial-gradient(circle at top,#020617,#000);
+    color:#fff;
+}
+
+.container{
+    width:100%;
+    max-width:420px;
+    padding:30px 20px;
+    text-align:center;
+}
+
+.profile-img{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #22d3ee;
+    box-shadow:0 0 25px rgba(34,211,238,.4);
+}
+
+h1{
+    margin-top:15px;
+    font-size:22px;
+}
+
+.bio{
+    margin-top:6px;
+    font-size:14px;
+    color:#94a3b8;
+}
+
+.links{
+    margin-top:30px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.link-btn{
+    display:block;
+    padding:15px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:600;
+    background:#020617;
+    border:1px solid #1e293b;
+    color:#fff;
+    transition:.3s;
+}
+
+.link-btn:hover{
+    background:#22d3ee;
+    color:#020617;
+    transform:scale(1.05);
+}
+
+.footer{
+    margin-top:25px;
+    font-size:12px;
+    color:#64748b;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="container">
-        <img src="https://via.placeholder.com/100" class="profile">
-        <h1>Dzaeon</h1>
-        <p>Web Developer in Progress 🚀</p>
+<div class="container">
 
-        <button id="toggleTheme">Toggle Theme</button>
+    <!-- FOTO PROFIL -->
+    <img src="https://via.placeholder.com/150" class="profile-img">
 
-        <div id="links"></div>
+    <!-- NAMA -->
+    <h1>Dzaeon</h1>
+
+    <!-- BIO -->
+    <div class="bio">
+        Content Creator • Downloader Tools • Social Media
     </div>
 
-    <script src="js/script.js"></script>
+    <!-- LINK-LINK -->
+    <div class="links">
+
+        <a href="https://youtube.com/" target="_blank" class="link-btn">
+            🎥 YouTube Channel
+        </a>
+
+        <a href="https://instagram.com/" target="_blank" class="link-btn">
+            📸 Instagram
+        </a>
+
+        <a href="https://tiktok.com/" target="_blank" class="link-btn">
+            🎵 TikTok
+        </a>
+
+        <a href="https://github.com/" target="_blank" class="link-btn">
+            💻 GitHub
+        </a>
+
+        <a href="#" class="link-btn">
+            🔥 ARJDownloader
+        </a>
+
+    </div>
+
+    <div class="footer">
+        © 2026 Dzaeon. All rights reserved.
+    </div>
+
+</div>
+
+<script>
+// Animasi muncul satu-satu
+const buttons = document.querySelectorAll(".link-btn");
+
+buttons.forEach((btn,i)=>{
+    btn.style.opacity="0";
+    btn.style.transform="translateY(20px)";
+    setTimeout(()=>{
+        btn.style.transition=".5s";
+        btn.style.opacity="1";
+        btn.style.transform="translateY(0)";
+    }, i * 150);
+});
+</script>
+
 </body>
 </html>
